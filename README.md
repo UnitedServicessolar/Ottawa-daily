@@ -37,9 +37,9 @@ What changed is the domain layer:
 
 The version string lives in **three** places and they move together:
 
-1. `index.html` → `var BUILD = "OTT 2";`
+1. `index.html` → `var BUILD = "OTT 3";`
 2. `index.html` → `var BUILD_DATE = "…";`
-3. `sw.js` → `var BUILD = "OTT 2";`
+3. `sw.js` → `var BUILD = "OTT 3";`
 
 `sw.js` is the one that matters: the cache name is built from it, so bumping it
 is what tells every phone to throw the old app away. Forget it and phones serve

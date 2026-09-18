@@ -291,7 +291,7 @@ input:focus, textarea:focus{outline:none; border-color:var(--pri)}
 /* ================= version =================
    BUILD_DATE is the date at the PROJECT SITE, never UTC and never this
    machine's clock. Same rule as every stamp in this app. */
-var BUILD = "OTT 2";
+var BUILD = "OTT 3";
 var BUILD_DATE = "2026-09-18";
 
 /* United Services mark — shown on a white plate so the navy wordmark
@@ -1225,11 +1225,15 @@ function nextBar(t, fn){
 
 /* ================= Firebase ================= */
 /* Live copy of every report into a Google Sheet.
+   SHARED ENDPOINT: this is the same Apps Script web app Murch posts to, on
+   the same spreadsheet. The script routes on SHEET_TOKEN — Murch's token
+   writes to the "Reports" tab, this one writes to the "Ottawa" tab. Two
+   jobs, one URL, one deployment, separate tabs and separate columns.
    Paste the Apps Script web-app URL between the quotes; leave it empty and the
    app simply skips this, exactly as before. TOKEN must match the one in the
    script. Neither is a secret — both ship in this file, same as the Firebase
    config — so the sheet is a MIRROR and Firebase stays the source of truth. */
-var SHEET_URL = "";
+var SHEET_URL = "https://script.google.com/macros/s/AKfycbxRcvZrFnRw5_5Z-cTLS7YCe2974Nt-5PJOcDTb6dud609RFW_i1YLjjvfO8wz4IJ5zSA/exec";
 var SHEET_TOKEN = "ottawa-2026-Kw9pRt";
 
 var FB = {
