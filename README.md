@@ -1,5 +1,11 @@
 # Ottawa Remediation — Daily Report
 
+**Live at `ottawa-daily.mahonryvazquez.workers.dev`** (Cloudflare Workers).
+That bare hostname — no scheme, no trailing slash — is what goes in Firebase →
+Authentication → Settings → **Authorized domains**, alongside Murch's. Without
+it, crews still file reports perfectly well and only supervisor sign-in fails,
+with `auth/unauthorized-domain`.
+
 Field reporting app for the Ottawa, Illinois module remediation. Five screens,
 Spanish and English, built to be filled in on a phone at the end of a shift.
 
@@ -31,9 +37,9 @@ What changed is the domain layer:
 
 The version string lives in **three** places and they move together:
 
-1. `index.html` → `var BUILD = "OTT 1";`
+1. `index.html` → `var BUILD = "OTT 2";`
 2. `index.html` → `var BUILD_DATE = "…";`
-3. `sw.js` → `var BUILD = "OTT 1";`
+3. `sw.js` → `var BUILD = "OTT 2";`
 
 `sw.js` is the one that matters: the cache name is built from it, so bumping it
 is what tells every phone to throw the old app away. Forget it and phones serve
